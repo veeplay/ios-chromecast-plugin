@@ -1,6 +1,8 @@
-## Veeplay Chromecast Plugin
+[<img src="http://veeplay.com/wp-content/themes/veeplay/images/logo_veeplay_small.png">](http://veeplay.com)
 
-This plugin enables the [Veeplay Media Player](http://veeplay.com) to connect and send playback to the [Google Chromecast](https://www.google.com/chromecast).
+## Veeplay Chromecast Plugin for iOS
+
+This plugin enables the iOS [Veeplay Media Player](http://veeplay.com) to connect and send playback to the [Google Chromecast](https://www.google.com/chromecast).
 
 To install:
 
