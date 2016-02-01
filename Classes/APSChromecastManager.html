@@ -44,6 +44,11 @@
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
+	
+	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
@@ -78,7 +83,7 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Chromecast">Chromecast</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Chromecast device access">Chromecast device access</a></span></li>
 	
 </ul></li>
 
@@ -93,6 +98,12 @@
 </ul></li>
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedInstance">sharedInstance</a></span></li>
+	
+</ul></li>
 
 
 
@@ -152,7 +163,20 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Posted when the player connected to a Chromecast compatible device</p>
+						<p>The <code>APSChromecastManager</code> is a singleton that manages Google Cast connections for the Veeplay media player. To setup, simply set your cast app id on the shared instance:</p>
+
+<pre><code>    [APSChromecastManager sharedInstance].chromecastAppId = @"YOURAPPID";
+</code></pre>
+
+<h2>Notifications</h2>
+
+<ul>
+<li><strong>APSMediaPlayerChromecastDeviceOnline</strong> - Posted when a Chromecast device comes online.</li>
+<li><strong>APSMediaPlayerChromecastDeviceOffline</strong> - Posted when a Chromecast device goes offline.</li>
+<li><strong>APSMediaPlayerChromecastConnectedNotification</strong> - Posted when the manager connected to a Chromecast compatible device.</li>
+<li><strong>APSMediaPlayerChromecastDisconnectedNotification</strong> - Posted when the manager disconnected from a Chromecast compatible device.</li>
+</ul>
+
 					</div>
 					
 					
@@ -170,6 +194,12 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/sharedInstance">+&nbsp;sharedInstance</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/chromecastAppId">&nbsp;&nbsp;chromecastAppId</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
@@ -178,8 +208,8 @@
 						</ul>
 						
 						
-						<a title="Chromecast" name="task_Chromecast"></a>
-						<h3 class="subsubtitle task-title">Chromecast</h3>
+						<a title="Chromecast device access" name="task_Chromecast device access"></a>
+						<h3 class="subsubtitle task-title">Chromecast device access</h3>
 
 						<ul class="task-list">
 							<li>
@@ -244,7 +274,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Set the Chromecast application ID to be launched when playing via Chromecast</p>
+		<p>Sets the Chromecast application ID to be launched when playing via Chromecast.</p>
 	</div>		
 	
     
@@ -261,7 +291,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Set the Chromecast application ID to be launched when playing via Chromecast</p>
+		<p>Sets the Chromecast application ID to be launched when playing via Chromecast.</p>
 	</div>
 	
 	
@@ -281,6 +311,58 @@
 					</div>
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedInstance" title="sharedInstance"></a>
+	<h3 class="subsubtitle method-title">sharedInstance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the shared <code>APSChromecastManager</code> instance, creating it if necessary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)sharedInstance</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The shared <code>APSChromecastManager</code> instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the shared <code>APSChromecastManager</code> instance, creating it if necessary.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APSChromecastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
@@ -600,7 +682,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Veeplay. All rights reserved. (Last updated: 2016-01-31)</span><br />
+						<p><span class="copyright">&copy; 2016 Veeplay. All rights reserved. (Last updated: 2016-02-01)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
