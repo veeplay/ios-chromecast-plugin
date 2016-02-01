@@ -10,34 +10,44 @@
 #import <GoogleCast/GoogleCast.h>
 #import "APSChromecastControlPlugin.h"
 
-/**
- *  Posted when a Chromecast device comes online
- */
+///--------------------
+/// @name Notifications
+///--------------------
+
 extern NSString *const APSMediaPlayerChromecastDeviceOnline;
-/**
- *  Posted when a Chromecast device goes offline
- */
 extern NSString *const APSMediaPlayerChromecastDeviceOffline;
-/**
- *   Posted when the player connected to a Chromecast compatible device
- */
 extern NSString *const APSMediaPlayerChromecastConnectedNotification;
-/*
- *  Posted when the player disconnected from a Chromecast compatible device
- */
 extern NSString *const APSMediaPlayerChromecastDisconnectedNotification;
 
+
+/**
+ The `APSChromecastManager` is a singleton that manages Google Cast connections for the Veeplay media player. To setup, simply set your cast app id on the shared instance:
+ 
+        [APSChromecastManager sharedInstance].chromecastAppId = @"YOURAPPID";
+ 
+ ## Notifications
+ 
+ - **APSMediaPlayerChromecastDeviceOnline** - Posted when a Chromecast device comes online.
+ - **APSMediaPlayerChromecastDeviceOffline** - Posted when a Chromecast device goes offline.
+ - **APSMediaPlayerChromecastConnectedNotification** - Posted when the manager connected to a Chromecast compatible device.
+ - **APSMediaPlayerChromecastDisconnectedNotification** - Posted when the manager disconnected from a Chromecast compatible device.
+ */
 @interface APSChromecastManager : NSObject<GCKDeviceScannerListener, GCKDeviceManagerDelegate, UIActionSheetDelegate>
 
+/**
+ *  Returns the shared `APSChromecastManager` instance, creating it if necessary.
+ *
+ *  @return The shared `APSChromecastManager` instance
+ */
 + (instancetype)sharedInstance;
 
 /**
- *  Set the Chromecast application ID to be launched when playing via Chromecast
+ *  Sets the Chromecast application ID to be launched when playing via Chromecast.
  */
 @property (nonatomic) NSString *chromecastAppId;
 
 /**-----------------------------------------------------------------------------
- * @name Chromecast
+ * @name Chromecast device access
  * -----------------------------------------------------------------------------
  */
 /**
