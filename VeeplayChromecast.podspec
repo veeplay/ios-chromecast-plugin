@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "VeeplayChromecast"
-  s.version          = "1.0.2"
+  s.version          = "1.0.3"
   s.summary          = "Veeplay Chromecast Plugin"
   s.homepage         = "http://veeplay.com"
   s.license          = { :type => "Commercial", :text => "Contact office@veeplay.com" }
@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   s.vendored_libraries   = "libVeeplayChromecast.a"
 
   s.dependency "Veeplay"
-  s.dependency "google-cast-sdk"
+  s.dependency "google-cast-sdk", "~> 2.10.4"
 end
