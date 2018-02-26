@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "VeeplayChromecast"
-  s.version          = "1.1"
+  s.version          = "1.1.1"
   s.summary          = "Veeplay Chromecast Plugin"
   s.homepage         = "http://veeplay.com"
   s.license          = { :type => "Commercial", :text => "Contact office@veeplay.com" }
